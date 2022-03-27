@@ -1,36 +1,28 @@
 package main;
 
-import java.util.Scanner;
-
-import model.Country;
 import model.CountryData;
 
 public class Main {
-	public static void main (String [] args) {
+	public static void main(String [] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		CountryData maleData = new CountryData();
-		CountryData femaleData = new CountryData();
-		int n = sc.nextInt();
-		/*
-		for(int i = 0; i<n;i++) {
-			String input = sc.next();
-			String [] info = input.split(";");
-			String name = info[0];
-			String goldMale = info[1];
-			String silverMale = info[2];
-			String bronzeMale = info[3];
-			
-			maleData.countries.add(new Country(name, goldMale, silverMale, bronzeMale));
-			maleData.sortByGold();
-		}*/
-		maleData.sortByGold();
-		maleData.print();
+		CountryData data = new CountryData();
 		
-
+		System.out.println("Masculino");
+		data.sortByMaleMedals();
+		data.print1();
+		System.out.println("----------");
 		
-	
+		System.out.println("Femenino");
+		data.sortByFemaleMedals();
+		data.print2();
+		System.out.println("----------");
+		
+		System.out.println("Combinado");
+		data.sortByCountryMedals();
+		data.print3();
+		
 	}
 	
-
+	
+	
 }
